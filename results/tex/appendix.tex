@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\linespread{1}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{xtab}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[margin=0.4 in]{geometry}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}
+\usepackage{attrib}
+\usepackage{booktabs}
+\usepackage{mathptmx}
+\usepackage[11pt]{moresize}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage[para,online,flushleft]{threeparttable}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{etoolbox}
+\usepackage{csquotes}
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{pdfpages}
+\usepackage{natbib}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{url}
+\bibliographystyle{agsm}
+
+
+ %\newcommand{\code}[1]{\texttt{#1}}
+ \newcommand{\code}{\texttt}
+
+
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=Latex.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{LastRevised=Saturday, December 02, 2017 14:08:59}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lem}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{hyp}{Hypothesis}
+\newcommand\T{\rule{0pt}{3ex}}
+\newcommand\B{\rule[-1.5ex]{0pt}{0pt}}
+\newcommand{\ts}{\textsuperscript}
+\titlespacing*{\subsection} {0pt} {0.1\baselineskip} {0.1\baselineskip}
+\titlespacing*{\section}    {0pt} {0.1\baselineskip} {0.1\baselineskip}
+\setlength{\belowdisplayskip}{0pt} \setlength{\belowdisplayshortskip}{0pt}
+\setlength{\abovedisplayskip}{0pt} \setlength{\abovedisplayshortskip}{0pt}
+\pagenumbering{gobble}
+
+\usepackage[document]{ragged2e}
+\setlength{\RaggedRightParindent}{\parindent}
+
+
+\title{\Large Appendix}
+\date{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+\renewcommand{\thefigure}{A\arabic{figure}}
+
+\newpage
+\begin{figure}
+  \caption{Histogram of amount raised as early stage fundraising for firms with and without VC}
+  \includegraphics[width=.8\textwidth]{vc_distribution_all_early_stage.png}
+ \end{figure}
+
+
+\begin{figure}
+  \caption{Binned scatterplot treatment effects for equity growth and series B}
+  \includegraphics[width=.85\textwidth]{corr_plot_treatment_effects.png}
+\end{figure}
+\end{center}
+
+\end{document}
+

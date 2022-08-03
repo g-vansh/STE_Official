@@ -1,0 +1,240 @@
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\linespread{1}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{xtab}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[margin=0.4 in]{geometry}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}
+\usepackage{attrib}
+\usepackage{booktabs}
+\usepackage{mathptmx}
+\usepackage[11pt]{moresize}
+
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage[para,online,flushleft]{threeparttable}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{etoolbox}
+\usepackage{csquotes}
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{pdfpages}
+\usepackage{natbib}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{url}
+\usepackage{graphics}
+\bibliographystyle{agsm}
+\newcommand{\code}{\texttt}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=Latex.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{LastRevised=Saturday, December 02, 2017 14:08:59}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lem}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{hyp}{Hypothesis}
+\newcommand\T{\rule{0pt}{3ex}}
+\newcommand\B{\rule[-1.5ex]{0pt}{0pt}}
+\newcommand{\ts}{\textsuperscript}
+\titlespacing*{\subsection} {0pt} {0.1\baselineskip} {0.1\baselineskip}
+\titlespacing*{\section}    {0pt} {0.1\baselineskip} {0.1\baselineskip}
+\setlength{\belowdisplayskip}{0pt} \setlength{\belowdisplayshortskip}{0pt}
+\setlength{\abovedisplayskip}{0pt} \setlength{\abovedisplayshortskip}{0pt}
+\pagenumbering{gobble}
+
+\usepackage[document]{ragged2e}
+\setlength{\RaggedRightParindent}{\parindent}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{center}
+
+\begin{figure}
+ \center
+  \caption{ROC score distribution for selection model}
+  \includegraphics[width=.4\textwidth]{roc_graph.png}
+  \caption*{\footnotesize \emph{Notes:} This figure reports the out-of-sample ROC score of a random forest model using a set of high dimensional startup observables to predict the probability that a venture capitalist has funded a startup's early stage round, in a sample of startups that received early stage financing.}
+\end{figure}
+
+\begin{figure}
+  \center
+  \caption{Histogram of Predictions}
+  \includegraphics[width=.8\textwidth]{pred_histogram.png}
+    \caption*{\footnotesize \emph{Notes:} This figure reports the histogram of out of sample predicted probability of receiving venture capital financing from a random forest model using a set of high dimensional startup observables, in a sample consisting only of startups that received early stage financing.}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+  \caption{Binned scatterplot for outcomes across the distribution of predicted probability of venture capital}
+  \includegraphics[width=.85\textwidth]{binscatters_p_vc_by_outcome.png}
+      \caption*{\footnotesize \emph{Notes:} This figure plots binned scatterplots on the out of sample predicted probability of receiving venture capital from our random forest model. The relationship between this probability and the receipt of VC is positive, but the relationship to other outcomes is more nuanced. }
+
+\end{figure}
+
+\begin{figure}
+ \caption{Distribution of treatment effects}
+  \includegraphics[width=.85\textwidth]{dist_treatment_effect.png}
+      \caption*{\footnotesize \emph{Notes:} This figure reports estimated treatment effects ($\hat{\Delta}$) for the firms in our sample. The dashed line in panels A and B represent the mean treatment effect for firms. }
+
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\newpage
+
+\begin{table}[htp]
+\begin{center}
+\caption{Summary Statistics}
+
+
+    \begin{threeparttable}
+
+\input{summary_stats.tex}
+\begin{tablenotes}
+\item {\footnotesize
+\emph{Notes:} Data represents U.S. based firms in Crunchbase founded between 2005 and 2017 that raised a form of eary stage financing, defined as any of a seed round, a pre-seed round, crowdfunding, angel, or grants. \emph{Seed VC} is an indicator equal to 1 if the startup receives seed financing from a venture capitalist. \emph{Early Stage VC} is an indicator equal to 1 if the startup receives any form of early stage financing from a venture capitalist. \emph{Equity Growth} is an indicator equal to 1 if the startup achieves an equity through either IPO or Acquisition.}
+\end{tablenotes}
+  \end{threeparttable}
+
+\end{center}
+\end{table}
+
+
+
+\begin{table}[htp]
+\begin{center}
+\caption{Strategic Determinant Function: Top Features for Strategic Treatment Effect of VC on Equity Growth}
+
+    \begin{threeparttable}
+
+\input{double_robust_estimator.tex}
+  \begin{tablenotes}
+      \item {\footnotesize
+        \emph{Notes:} Estimates the impact of early stage venture capital on firm
+  outcomes. Columns (1), (3), and (5) report naive OLS estimators with no
+  controls. Columns (2), (4), and (6) report estimates using the double LASSO
+  approach of Belloni et al (2014). Founding year fixed effects are included in all regressions. Standard errors clustered at the state level are reported. $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01
+        }
+  		\end{tablenotes}
+  		\end{threeparttable}
+
+\end{center}
+\end{table}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htp]
+\begin{center}
+\caption{Top Features Predicting Venture Capital vs Other Forms of Financing in a Random Forest}
+  \resizebox{.7\textwidth}{!}{%
+
+    \begin{threeparttable}
+
+    \input{top_features_random_forest.tex}
+    \begin{tablenotes}
+      \item {\footnotesize
+        \emph{Notes:} This table reports the top features selected by feature importance score in a random forest model predicting whether a firm gets venture capital financing or a different form of financing. The random forest model is run with a 10-fold cross validation.
+        }
+  	\end{tablenotes}
+  	\end{threeparttable}
+  }
+\end{center}
+\end{table}
+
+
+\begin{table}[htp]
+\begin{center}
+\caption{Strategic Determinant Function: Top Features for Strategic Treatment Effect of VC on Equity Growth}
+  \resizebox{.7\textwidth}{!}{%
+
+    \begin{threeparttable}
+     \input{top_features_equity_growth.tex}
+     \begin{tablenotes}
+      \item {\footnotesize
+        \emph{Notes:} This table reports the top features selected by a penalized LASSO model with the estimates of the strategic treatment effect for VC on equity growth, and their associated coefficients.}
+  		\end{tablenotes}
+  		\end{threeparttable}
+  }
+\end{center}
+\end{table}
+
+
+\begin{table}[htp]
+\begin{center}
+\caption{Strategic Determinant Function: Top Features for Strategic Treatment Effect of VC on Series B Financing}
+  \resizebox{.7\textwidth}{!}{%
+
+    \begin{threeparttable}
+    \input{top_features_series_b.tex}
+     \begin{tablenotes}
+      \item {\footnotesize
+        \emph{Notes:} This table reports the top features selected by a penalized LASSO model with the estimates of the strategic treatment effect for VC on raising Series B financing, and their associated coefficients.}
+  		\end{tablenotes}
+  		\end{threeparttable}
+  }
+\end{center}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htp]
+\caption{The Role of Strategic Coherence}
+\begin{center}
+  \begin{threeparttable}
+    \input{coherence.tex}
+    \begin{tablenotes}
+    \item {\footnotesize
+      \emph{Notes:} This table reports the out-of-sample R-squared from two penalized LASSO models with estimates of the strategic treatment effect (STE) as the dependent variable. A \emph{Full Model}, using all observables and their two-way interactions, and a \emph{Non Interacted Model} introducing only the observables linearly. The percentage increase from the non interacted to the full model represents the importance of coherence for a managerial strategy. Column (1) uses the STE estimates for equity growth (IPO or acquisition) as the dependent variable, while column (2) uses the STE estimates for getting a series B.}
+		\end{tablenotes}
+		\end{threeparttable}
+	\end{center}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{center}
+\end{document}

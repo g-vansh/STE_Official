@@ -1,0 +1,145 @@
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\linespread{1}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{xtab}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[margin=0.4 in]{geometry}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}
+\usepackage{attrib}
+\usepackage{booktabs}
+\usepackage{mathptmx}
+\usepackage[11pt]{moresize}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage[para,online,flushleft]{threeparttable}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{etoolbox}
+\usepackage{csquotes}
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{pdfpages}
+\usepackage{natbib}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{url}
+\bibliographystyle{agsm}
+
+
+ %\newcommand{\code}[1]{\texttt{#1}} 
+ \newcommand{\code}{\texttt}
+
+
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=Latex.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{LastRevised=Saturday, December 02, 2017 14:08:59}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lem}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{hyp}{Hypothesis}
+\newcommand\T{\rule{0pt}{3ex}}
+\newcommand\B{\rule[-1.5ex]{0pt}{0pt}}
+\newcommand{\ts}{\textsuperscript}
+\titlespacing*{\subsection} {0pt} {0.1\baselineskip} {0.1\baselineskip}
+\titlespacing*{\section}    {0pt} {0.1\baselineskip} {0.1\baselineskip}
+\setlength{\belowdisplayskip}{0pt} \setlength{\belowdisplayshortskip}{0pt}
+\setlength{\abovedisplayskip}{0pt} \setlength{\abovedisplayshortskip}{0pt}
+\pagenumbering{gobble}
+
+\usepackage[document]{ragged2e}
+\setlength{\RaggedRightParindent}{\parindent}
+
+
+
+\begin{document}
+
+
+\begin{center}
+
+
+  \begin{figure}
+    \center
+  \caption{ROC score distribution for selection model}
+  \includegraphics[width=.4\textwidth]{roc_graph.png}
+  \caption*{\footnotesize \emph{Notes:} This figure reports the out of sample ROC score of a random forest model using a set of high dimensional startup observables to predict the probability that a venture capitalist has funded a startup's early stage round, in a sample of startups that received early stage financing.}
+\end{figure}
+
+  \begin{figure}
+    \center
+  \caption{Histogram of Predictions}
+  \includegraphics[width=.8\textwidth]{pred_histogram.png}
+    \caption*{\footnotesize \emph{Notes:} This figure reports the histogram of out of sample predicted probability of receiving venture capital financing from a random forest model using a set of high dimensional startup observables, in a sample consisting only of startups that received early stage financing.}
+\end{figure}
+
+
+
+
+\begin{figure}
+  \caption{Binned scatterplot for outcomes across predicted distribution}
+  \includegraphics[width=.85\textwidth]{binscatters_p_vc_by_outcome.png}
+\end{figure}
+
+
+
+
+\begin{figure}
+ \caption{Distribution of treatment effects}
+  \includegraphics[width=.85\textwidth]{dist_treatment_effect.png}
+\end{figure}
+
+
+\clearpage
+\newpage
+\input{summary_stats.tex}
+
+{\footnotesize
+\input{double_robust_estimator.tex}
+}
+\input{top_features_random_forest.tex}
+
+\input{top_features_equity_growth.tex}
+\input{top_features_series_b.tex}
+
+\input{coherence.tex}
+
+\end{center}
+
+\end{document}
